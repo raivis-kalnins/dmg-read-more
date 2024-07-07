@@ -18,14 +18,14 @@ define('DMGBLOCKS_ROOT_URL', plugin_dir_url(__FILE__));
  * Register and enqueue Gutenberg Blocks
  */
 function register_dmg_blocks() {
-    $blocksPath = DMGBLOCKS_ROOT_PATH . 'build/blocks/';
-    $iterator = new DirectoryIterator($blocksPath);
-    foreach ($iterator as $file) {
-        if ($file->isDot()) continue;
-        if ($file->isDir()) {
-            register_block_type($file->getPathname());
-        }
-    }
+	$blocksPath = DMGBLOCKS_ROOT_PATH . 'build/blocks/';
+	$iterator = new DirectoryIterator($blocksPath);
+	foreach ($iterator as $file) {
+		if ($file->isDot()) continue;
+		if ($file->isDir()) {
+			register_block_type($file->getPathname());
+		}
+	}
 }
 add_action('init', 'register_dmg_blocks');
 
@@ -60,3 +60,25 @@ function wpdocs_enqueue_custom_admin_style() {
 	wp_enqueue_style( 'admin-dmgblocks-style', $style_url, array(), $v, 'all' );
 }
 add_action('admin_enqueue_scripts','wpdocs_enqueue_custom_admin_style');
+
+/**
+ * WP-CLI command named like, `dmg-read-more search`
+ */
+class DMG_Search_Command {
+	protected $environment;
+
+	public function __construct() {
+		$this->environment = wp_get_environment_type();
+	}
+	
+	public function __invoke( $args ) {
+		WP_CLI::log( sprintf( 'The current environment is: %s', $this->environment ) );
+		//echo get_search_query();
+	}
+}
+// 1. Register the instance for the callable parameter.
+$instance = new DMG_Search_Command();
+//WP_CLI::add_command( 'dmg-read-more_search', $instance );
+
+// 2. Register object as a function for the callable parameter.
+//WP_CLI::add_command( 'dmg-read-more_search', 'DMG_Search_Command' );
