@@ -1,0 +1,98 @@
+.wp-block-dmg {
+
+	&-read-more {
+		padding: 0;
+
+		.btn {
+			transition: all .3s ease-out;
+			line-height: normal;
+			outline-width: 0;
+			border-radius: 0;
+			padding: 0;
+			border: 0;
+			margin: 0;
+
+			&-link {				
+				max-width: fit-content;
+				text-decoration: none;
+				position: relative;
+				border: 0;
+			}
+
+			&-center {
+				margin: 0 auto;
+				display: block;
+			}
+
+			&-right {
+				float: right;
+			}
+
+			&-large {
+				font-size: 24px;
+			}
+
+			&-small {
+				font-size: 14px;
+			}
+
+			&:hover,
+			&:active,
+			&:focus {
+				transition: all .3s ease-out;
+				line-height: normal;
+				outline-style: none;
+				box-shadow: none;
+				outline-width: 0;
+				opacity: 0.7;
+				padding: 0;
+				border: 0;				
+			}
+		}
+	}
+
+	.faux-link__element {
+		background-size: cover;
+		background-position: center;
+		margin: 16px 0 16px 0;
+		border-radius: 8px;
+		position: relative;
+		overflow: hidden;
+		padding: 0 !important;
+		background-color: $white;
+
+		.wp-cta-block {
+			display: block;
+			padding: 0.75rem 0 0.75rem 0;
+			background-color: $white;
+
+			.wp-cta-block-wrap.control {
+				position: relative;
+				display: inline-block;
+				width: 100%;
+				height: 30px;
+
+				& > * {
+					position: absolute;
+				}
+
+				.title {
+					font-size: 24px;
+					line-height: 32px;
+					font-weight: 700;
+					color: #fff;
+					left: 16px;
+				}
+
+				.button {
+					background-color: transparent;
+					background-repeat: no-repeat;
+					background-size: 100%;
+					background-position: center;
+					border: 0;
+					right: 12px;
+				}
+			}
+		}
+	}
+}

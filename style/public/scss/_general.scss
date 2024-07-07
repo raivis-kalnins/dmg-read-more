@@ -1,0 +1,99 @@
+// Base Colors
+$colors: (
+	white: #ffffff,
+	black: #000000,
+	grey-dark: #292929,
+	grey-light: #999999,
+	grey-light-bg: #f5f5f5,
+	orange-dmg: #FF3B05,
+	red-alert: #E30613,
+	green: #35BD64
+);
+
+$white: map-get($colors, white);
+$black: map-get($colors, black);
+$grey-dark: map-get($colors, grey-dark);
+$grey-light: map-get($colors, grey-light);
+$grey-light-bg: map-get($colors, grey-light-bg);
+$orange-dmg: map-get($colors, orange-dmg);
+$red-alert: map-get($colors, red-alert);
+$green: map-get($colors, green);
+
+.bg {
+	
+	&-lightgrey {
+		background-color: $grey-light-bg;
+	}
+}
+
+.align-self {
+
+	&-center {
+		align-self: center;
+	}
+}
+
+.wp-block {
+
+	&-dmg {
+		
+		&-read-more {
+			position: relative;
+			padding: 15px 0;
+		}
+	}
+}
+
+@for $i from 0 through 12 {
+
+	.order-#{$i} {
+		order: $i !important;
+	}
+}
+
+// `xl` applies to large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
+
+	@for $i from 0 through 12 {
+
+		.wp-block-dmg-colum.order-xl-#{$i} {
+			order: $i !important;
+		}
+	}
+}
+
+// `lg` applies to medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+
+	@for $i from 0 through 12 {
+
+		.wp-block-dmg-colum.order-lg-#{$i} {
+			order: $i !important;
+		}
+	}
+
+	@for $i from 0 through 12 {
+
+		.order-lg-#{$i} {
+			order: $i !important;
+		}
+	}
+}
+
+// `md` applies to small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+
+	@for $i from 0 through 12 {
+
+		.wp-block-dmg-colum.order-md-#{$i} {
+			order: $i !important;
+		}
+	}
+
+	@for $i from 0 through 12 {
+
+		.order-sm-#{$i} {
+			order: $i !important;
+		}
+	}
+}

@@ -1,0 +1,72 @@
+{
+	"apiVersion": 2,
+	"name": "dmg/read-more",
+	"title": "DMG Read More",
+	"category": "design",
+	"description": "DMG Read More custom block",
+	"textdomain": "default",
+	"attributes": {
+		"url": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a",
+			"attribute": "href"
+		},
+		"buttonText" : {
+			"type": "string",
+			"source": "text",
+			"selector": "a",
+			"default": "Read More:"
+		},
+		"borderColor": {
+			"type": "string",
+			"default": ""
+		},
+		"txtColor": {
+			"type": "string",
+			"default": "black"
+		},
+		"bgColor": {
+			"type": "string",
+			"default": "transparent"
+		},
+		"bSize": {
+			"type": "string",
+			"default": "0"
+		},
+		"bootAlign": {
+			"type": "string",
+			"default": ""
+		},
+		"bootClass": {
+			"type": "string",
+			"default": ""
+		},
+		"bootSizesClass": {
+			"type": "string",
+			"default": ""
+		},
+		"linkTarget": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a",
+			"attribute": "target"
+		},
+		"rel": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a",
+			"attribute": "rel"
+		},
+		"placeholder": {
+			"type": "string"
+		}
+	},
+	"supports": {
+		"anchor": true,
+		"align": true,
+		"html": true
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css"
+}
